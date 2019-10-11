@@ -5,10 +5,11 @@ function a(WraapedComponent){
             super(props);
         }
         render(){
+            const {age, ...otherProps} = this.props
             return(
                 <div>
                     A组件现在是高阶组件
-                    <WraapedComponent/>
+                    <WraapedComponent sex = {"男"} {...otherProps}/>
                 </div>
             )
         }

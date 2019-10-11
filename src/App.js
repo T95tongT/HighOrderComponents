@@ -6,7 +6,7 @@ import D from './componments/D';
 function App() {
   return (
     <div className="App">
-     <B/>
+     <B name={'tongtong'} age = {18}/>
      <C/>
      <D/>
     </div>
