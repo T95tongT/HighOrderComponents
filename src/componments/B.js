@@ -1,13 +1,16 @@
 import React, {Component} from "react";
-import a from "./A";
-@a
+import e from "./E";
+
 class B extends Component {
     constructor(props){
         super(props);
     }
+
+   
     render(){
         return(
             <div>
+                <br/> <br/> <br/>
                 {this.props.name}
                 <br/>
                 {this.props.age}
@@ -19,4 +22,4 @@ class B extends Component {
         )
     }
 }
-export default B;
+export default e("hello")(B);
