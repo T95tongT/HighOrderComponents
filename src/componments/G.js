@@ -1,17 +1,23 @@
 /**
  * @description: 根据React snippets plugins可以使用rcc快捷语句，快速创建一个简易组件。
  */
-class componentName extends Component {
-    constructor(props, ...rest) {
-        super(props, ...rest);
+import React, {Component} from "react";
+
+import "./../static/iconfont.css"
+import Tabbar from "./Tabbar";
+class G extends Component {
+    constructor(props) {
+        super(props);
         this.state = {};
     }
 
     render() {
         return (
-            <div></div>
+            <div style={{display:'flex', width:500, height:700, border:'1px solid'}}>
+              <Tabbar/>
+            </div>
         );
     }
 }
 
-componentName.propTypes = {};
+export default G
