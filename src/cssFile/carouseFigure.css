@@ -1,0 +1,28 @@
+.container{
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+}
+.turn :nth-child(1n){
+    width: 300px;
+    height: 250px;
+    align-self: center;
+    justify-content: center;
+}
+.pre{
+    color: aqua;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
+.next{
+    color: aqua;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
