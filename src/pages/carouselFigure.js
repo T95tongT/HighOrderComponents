@@ -21,7 +21,7 @@ class CarouseFigure extends Component {
             this.next("auto");
         },2000)
     }
-    pre (from){
+    pre (){
         window.clearInterval(auto);
 
         this.setState({
