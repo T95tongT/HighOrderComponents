@@ -4,6 +4,7 @@ import B from './componments/B';
 import C from './componments/C';
 import D from './componments/D';
 import G from './componments/G';
+import H from './componments/H';
 import Router from './router';
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
      <C/>
      <D/>
      <G/> */}
-     <Router/>
+     {/* <Router/> */}
+     <H/>
+     <C/>
     </div>
   );
 }

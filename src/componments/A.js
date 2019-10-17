@@ -16,8 +16,11 @@ function a(WraapedComponent){
         refc = (instance) =>{
             console.log(instance, this);
         }
+        componentDidMount(){
+            console.log(1)
+        }
         render(){
-            const {age, ...otherProps} = this.props;
+            //const {age, ...otherProps} = this.props;
             // const newProps = {
             //     value: this.state.value,
             //     onChange: this.onChange
@@ -27,7 +30,7 @@ function a(WraapedComponent){
                     A组件现在是高阶组件
                     <WraapedComponent 
                         sex = {"男"} 
-                        {...otherProps} 
+                        {...this.props} 
                         ref = {this.refc} 
                         {
                             ...{

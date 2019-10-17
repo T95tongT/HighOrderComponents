@@ -5,7 +5,11 @@ class C extends Component {
     constructor(props){
         super(props);
     }
+    componentDidMount(){
+        console.log(2)
+    }
     render(){
+        console.log(this.props)
         return(
             <div>
                 C
