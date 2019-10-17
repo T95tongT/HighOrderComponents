@@ -26,3 +26,45 @@
     height: 30px;
     align-self: center;
 }
+
+.containerCss{
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    align-self: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.turnCss {
+    width: 1500px;
+    height: 250px;
+    align-items: center;
+    flex-direction: row;
+    display: inline-flex;
+    align-self: center;
+    position: relative;
+    margin: 20px;
+}
+.preCss{
+    color: aqua;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    z-index: 1;
+}
+.nextCss{
+    color: aqua;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    z-index: 1;
+}
+img{
+    width: 310px;
+    height: 250px; 
+    margin: 10px;
+    position: relative;
+  
+}

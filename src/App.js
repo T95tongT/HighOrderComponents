@@ -6,7 +6,9 @@ import './App.css';
 // import G from './componments/G';
 // import H from './componments/H';
 // import Router from './router';
-import CarouseFigure from "./pages/carouselFigure"
+import CarouseFigure from "./pages/carouselFigure";
+import CarouselFigureByCss from "./pages/carouselFigureByCss";
+
 function App() {
   return (
     <div className="App" id = 'app'>
@@ -18,6 +20,7 @@ function App() {
      {/* <H/>
      <C/> */}
      <CarouseFigure />
+     <CarouselFigureByCss/>
     </div>
   );
 }
