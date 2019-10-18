@@ -8,7 +8,10 @@ import './App.css';
 // import Router from './router';
 import CarouseFigure from "./pages/carouselFigure";
 import CarouselFigureByCss from "./pages/carouselFigureByCss";
-
+import Bubble from "./pages/bubbleSort";
+import Sort from "./pages/sort";
+import ChooseSort from "./pages/chooseSort";
+import InsertSort from "./pages/insertSort";
 function App() {
   return (
     <div className="App" id = 'app'>
@@ -21,6 +24,10 @@ function App() {
      <C/> */}
      <CarouseFigure />
      <CarouselFigureByCss/>
+     <Bubble/>
+     <Sort/>
+     <ChooseSort/>
+     <InsertSort/>
     </div>
   );
 }
