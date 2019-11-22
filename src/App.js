@@ -14,6 +14,7 @@ import Sort from "./pages/sort";
 import ChooseSort from "./pages/chooseSort";
 import InsertSort from "./pages/insertSort";
 import IncludeRelate from "./componments/IncludeRealte/IncludeRelate";
+import IncludeRelateIndex from "./componments/IncludeRealte/index";
 function App() {
   return (
     <div className="App" id = 'app'>
@@ -31,7 +32,8 @@ function App() {
      <ChooseSort/>
      <InsertSort/> */}
      {/* <Context /> */}
-     <IncludeRelate/>
+     {/* <IncludeRelate/> */}
+     <IncludeRelateIndex/>
     </div>
   );
 }
