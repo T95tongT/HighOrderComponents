@@ -15,6 +15,7 @@ import ChooseSort from "./pages/chooseSort";
 import InsertSort from "./pages/insertSort";
 import IncludeRelate from "./componments/IncludeRealte/IncludeRelate";
 import IncludeRelateIndex from "./componments/IncludeRealte/index";
+import CAboutContext from "./componments/Context/AboutContext";
 function App() {
   return (
     <div className="App" id = 'app'>
@@ -33,7 +34,8 @@ function App() {
      <InsertSort/> */}
      {/* <Context /> */}
      {/* <IncludeRelate/> */}
-     <IncludeRelateIndex/>
+     {/* <IncludeRelateIndex/> */}
+     <CAboutContext/>
     </div>
   );
 }
