@@ -8,6 +8,9 @@ export const themes = {
       foreground: '#ffffff',
       background: '#222222',
     },
+    changeThmes : ()=>{
+
+    }
 };
 const myContext = React.createContext({background:'red'});//当内部组件没有找到对应的provider时，草回去这个默认值红色。
 
@@ -29,7 +32,32 @@ class AboutContext extends React.Component {
 }
 AboutContext.contextType = myContext; //把context带有默认值的对象赋给AboutContext类
 
+class AboutContextCustomer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+        
+    }
 
+    render() {
+        console.log(this, this.context, "AboutContextCustomer")
+        return (
+            <div>   
+                <myContext.Consumer>{/** Consumer确是把数据绑定在（value1，value2， value3...）=>{return (组件)}上了*/}
+                    {({theme, toggleTheme})=>{
+                        console.log({theme, toggleTheme}, "{theme, changeThmes}")
+                        return (
+                            <button  onClick={toggleTheme}  style={{backgroundColor: theme && theme.background}}>
+                                点我啊
+                            </button>
+                        )
+                    }}
+                </myContext.Consumer>
+            </div>
+        );
+    }
+}
+AboutContextCustomer.contextType = myContext; //就是想看看context上有没有。
 class A extends React.Component{
     constructor(props){
         super(props)
@@ -55,6 +83,7 @@ class BAboutContext extends React.Component{
             theme : themes.dark
         }
         console.log(this, "constructor")
+       
     }
     change = ()=>{
         this.setState({
@@ -65,6 +94,7 @@ class BAboutContext extends React.Component{
             console.log(this)
         })
     }
+   
     componentDidMount(){
         console.log(this, "componentDidMount")
     }
@@ -82,6 +112,7 @@ class BAboutContext extends React.Component{
                 <div>
                     <A />{/**不带provider的组件 */}
                 </div>
+              
            </div>
         );
     }
@@ -90,9 +121,20 @@ class BAboutContext extends React.Component{
 class CAboutContext extends React.Component{
     constructor(props){
         super(props);
-        this.state={
-            theme :{background:"blue"}
+        
+        this.toggleTheme = () => {
+            this.setState({
+                theme: this.state.theme === themes.dark
+                ? themes.light
+                : themes.dark,  
+            }, ()=>{
+                console.log(this)
+            })
         }
+        this.state = {
+            theme: themes.light,
+            toggleTheme: this.toggleTheme,
+        };
     }
     render() {
         console.log(this, this.context, "CAboutContext")
@@ -101,8 +143,14 @@ class CAboutContext extends React.Component{
                 <myContext.Provider value = {this.state.theme}>
                     <BAboutContext/>
                 </myContext.Provider>
+                <myContext.Provider value = {this.state}>
+                    <AboutContextCustomer />
+                </myContext.Provider>
                 <div>
                     <A />{/**不带provider的组件 */}
+                </div>
+                <div>
+                    <AboutContextCustomer />
                 </div>
             </div>
         );
