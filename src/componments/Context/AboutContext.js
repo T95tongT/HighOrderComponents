@@ -20,7 +20,12 @@ class AboutContext extends React.Component {
         this.state = {};
         
     }
-
+    componentDidMount(){
+        console.log(this,"componentDidMount")
+    }
+    componentWillReceiveProps(nextProps, nextContent){// 还可以在生命周期中获取到， 就是在已有的参数后，再加上一个nextContent
+        console.log(this, nextProps, nextContent, "componentWillReceiveProps")
+    }
     render() {
         console.log(this, this.context, "AboutContext")
         return (
@@ -39,8 +44,12 @@ class AboutContextCustomer extends React.Component {
         
     }
 
+    shouldComponentUpdate(nextProps,nextState, nextContent){
+        console.log(nextProps,nextState, nextContent,"shouldComponentUpdate")
+        return true;
+    }
     render() {
-        console.log(this, this.context, "AboutContextCustomer")
+        console.log(this, this.props, this.context, "AboutContextCustomer")
         return (
             <div>   
                 <myContext.Consumer>{/** Consumer确是把数据绑定在（value1，value2， value3...）=>{return (组件)}上了*/}
@@ -68,7 +77,7 @@ class A extends React.Component{
         console.log(this, this.context, "A")
         return (
             <AboutContext  onClick = {this.props.change}>
-               点我
+               点我111
             </AboutContext>
         );
     }
@@ -134,24 +143,30 @@ class CAboutContext extends React.Component{
         this.state = {
             theme: themes.light,
             toggleTheme: this.toggleTheme,
+            status:0
         };
+    }
+    toggleTheme = ()=>{
+        this.setState({
+            status:1
+        })
     }
     render() {
         console.log(this, this.context, "CAboutContext")
         return (
             <div>
-                <myContext.Provider value = {this.state.theme}>
+                <myContext.Provider value = {this.state.theme} >
                     <BAboutContext/>
                 </myContext.Provider>
-                <myContext.Provider value = {this.state}>
+                <myContext.Provider value = {this.state} >
                     <AboutContextCustomer />
                 </myContext.Provider>
-                <div>
+                <div onClick = {this.toggleTheme}>
                     <A />{/**不带provider的组件 */}
                 </div>
-                <div>
-                    <AboutContextCustomer />
-                </div>
+                {/* <div>
+                    <AboutContextCustomer status={this.state.status}/>
+                </div> */}
             </div>
         );
     }
