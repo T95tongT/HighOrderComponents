@@ -8,14 +8,7 @@ class Main extends Component {
         console.log(window.location)
     }
    
-    render(){
-        return(
-            <div>
-               <button onClick = {this.click}>1111</button>
-        this.state = {
-            showValueIframe :'父页面'
-        }
-    }
+
    
     componentDidMount (){
         console.log("父页面的挂载")
