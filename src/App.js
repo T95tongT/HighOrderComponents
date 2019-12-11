@@ -16,6 +16,9 @@ import InsertSort from "./pages/insertSort";
 import IncludeRelate from "./componments/IncludeRealte/IncludeRelate";
 import IncludeRelateIndex from "./componments/IncludeRealte/index";
 import CAboutContext from "./componments/Context/AboutContext";
+import GrandPar from "./componments/Props/ParAndSonContedByProps";
+import  ConextComponentConsutomer from "./componments/Context/ShowContext";
+import Secode from "./componments/CrossOrgin/sconde"
 function App() {
   return (
     <div className="App" id = 'app'>
@@ -35,7 +38,10 @@ function App() {
      {/* <Context /> */}
      {/* <IncludeRelate/> */}
      {/* <IncludeRelateIndex/> */}
-     <CAboutContext/>
+     {/* <CAboutContext/>
+     <GrandPar/> */}
+     {/* <ConextComponentConsutomer/> */}
+     <Secode/>
     </div>
   );
 }
