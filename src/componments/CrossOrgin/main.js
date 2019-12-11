@@ -7,6 +7,7 @@ class Main extends Component {
     click = ()=>{
         console.log(window.location)
     }
+   
 
    
     componentDidMount (){
