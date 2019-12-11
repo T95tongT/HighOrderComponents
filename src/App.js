@@ -18,7 +18,12 @@ import IncludeRelateIndex from "./componments/IncludeRealte/index";
 import CAboutContext from "./componments/Context/AboutContext";
 import GrandPar from "./componments/Props/ParAndSonContedByProps";
 import  ConextComponentConsutomer from "./componments/Context/ShowContext";
+
 import Secode from "./componments/CrossOrgin/sconde"
+import Thisd from "./componments/CrossOrgin/thisd"
+
+import Main from "./componments/CrossOrgin/main"
+
 function App() {
   return (
     <div className="App" id = 'app'>
@@ -42,6 +47,9 @@ function App() {
      <GrandPar/> */}
      {/* <ConextComponentConsutomer/> */}
      <Secode/>
+     {/* <Secode/> */}
+     <Thisd/>
+     <Main/>
     </div>
   );
 }

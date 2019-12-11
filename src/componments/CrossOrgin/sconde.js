@@ -20,6 +20,7 @@ class Secode extends Component {
         window.addEventListener('message', (e)=> {
             console.log(e.data,'second');
            
+            window.location.href = "http://127.0.0.1:3001/thisd.js"
             this.setState({
                 showValueIframe: e.data
             })
@@ -31,6 +32,7 @@ class Secode extends Component {
             win.postMessage("hi there!", 'http://127.0.0.1:3002')
         }, 0)//必须等子页面搭建完成在发送
         //window.parent.postMessage('子页面传到父页面的值', "http://127.0.0.1:3000/");
+        window.parent.postMessage('子页面传到父页面的值', "http://127.0.0.1:3000/");
     }
     clickFromOpen = ()=>{
         window.opener.postMessage('子页面传到父页面的值clickFromOpen', "http://127.0.0.1:3000/");

@@ -14,10 +14,12 @@ class Thisd extends Component {
         console.log('even122222t', event.origin)
      
       }
+
     componentDidMount(){
         console.log("Thisd子页面的挂载")
+        console.log(window.top) 
         window.addEventListener('message', (e)=> {
-            console.log(e.data,'second');
+            console.log(e.data,'Thisd子页面的挂载');
             this.setState({
                 showValueIframe: e.data
             })
@@ -28,6 +30,10 @@ class Thisd extends Component {
     }
     clickFromOpen = ()=>{
         window.opener.postMessage('子页面传到父页面的值clickFromOpen', "http://127.0.0.1:3000/");
+        window.parent.postMessage('Thisd子页面传到父页面的值', "http://127.0.0.1:3000/");
+    }
+    clickFromOpen = ()=>{
+        window.opener.postMessage('Thisd子页面传到父页面的值clickFromOpen', "http://127.0.0.1:3000/");
     }
     render(){
         return(
