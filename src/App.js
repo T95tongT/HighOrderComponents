@@ -23,7 +23,7 @@ import Secode from "./componments/CrossOrgin/sconde"
 import Thisd from "./componments/CrossOrgin/thisd"
 
 import Main from "./componments/CrossOrgin/main"
-
+import ContractList from "./pages/Hook.js";
 function App() {
   return (
     <div className="App" id = 'app'>
@@ -48,8 +48,9 @@ function App() {
      {/* <ConextComponentConsutomer/> */}
      <Secode/>
      {/* <Secode/> */}
-     <Thisd/>
-     <Main/>
+     {/* <Thisd/>
+     <Main/> */}
+     <ContractList/>
     </div>
   );
 }

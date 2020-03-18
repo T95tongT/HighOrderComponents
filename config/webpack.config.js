@@ -30,7 +30,7 @@ const eslint = require('eslint');
 const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
-
+const glob = require('glob');
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // Some apps do not need the benefits of saving a web request, so not inlining the chunk
@@ -119,6 +119,7 @@ module.exports = function(webpackEnv) {
       },
     ].filter(Boolean);
     if (preProcessor) {
+      console.log(path)
       loaders.push(
         {
           loader: require.resolve('resolve-url-loader'),
@@ -684,3 +685,20 @@ module.exports = function(webpackEnv) {
     performance: false,
   };
 };
+
+
+//多页面配置
+glob.sync("./src/home/*/index.html").forEach(path => {
+  const chunk = path.split("./src/home/")[1].split("/index.html")[0];
+  const filename = chunk + ".html";
+  const htmlConf = {
+      filename: filename,
+      template: path,
+      inject: "body",
+      // favicon: "./src/assets/image/favicon.png",
+      hash: true,
+      chunks: ["vendors", chunk],
+      xhtml: true
+  };
+  devConfig.plugins.push(new HtmlWebpackPlugin(htmlConf));
+});
